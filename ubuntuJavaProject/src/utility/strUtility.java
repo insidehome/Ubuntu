@@ -133,4 +133,44 @@ public class strUtility {
 		StringBuffer sb = new StringBuffer("TRUNCATE " + stTBName + " ");
 		return rtStr;
 	}	
+	//GET THE TRADETYPE FROM CHINESE INTO CODE
+	public String getTradeType(String input)
+	{
+		String rtStr = "B";
+		if ("賣權".equals(input.trim()))
+		{
+			rtStr = "S";
+		}
+		else if ("買權".equals(input.trim()))
+		{
+			rtStr = "B";
+		} 
+		else 
+		{
+			rtStr = "N";
+		}
+		return rtStr;
+	}
+	//GET THE TRADERID FROM CHINESE INTO CODE
+	public String getTraderId(String input)
+	{
+		String rtStr = "S";
+		if ("自營商".equals(input.trim()))
+		{
+			rtStr = "S";
+		}
+		else if ("投信".equals(input.trim()))
+		{
+			rtStr = "T";
+		} 
+		else if ("外資及陸資".equals(input.trim()))
+		{
+			rtStr = "F";
+		} 
+		else 
+		{
+			rtStr = "N";
+		}
+		return rtStr;
+	}	
 }
